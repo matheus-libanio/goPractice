@@ -9,7 +9,7 @@ func main() {
 		pressao     float32 = 1.05
 	)
 	temperaturaConfigurada := fmt.Sprintf("Temperatura em Celsius: %v°C", temperatura)
-	umidadeConfigurada := fmt.Sprintf("\nPercentual de umidade: %f%", umidade*100)
+	umidadeConfigurada := fmt.Sprintf("\nPercentual de umidade: %.2f%", umidade*100)
 	pressaoConfigurada := fmt.Sprintf("\nPressão atmosférica: %vPa", pressao)
 	fmt.Println(temperaturaConfigurada, umidadeConfigurada, pressaoConfigurada)
 
