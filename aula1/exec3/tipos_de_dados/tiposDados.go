@@ -9,10 +9,6 @@ var (
 	teste string = "String de teste"
 )
 
-func teste2() {
-
-}
-
 func RespostaDosExercicios() (int, error) {
 	var lastName string = "Smith"
 	var age int = 35
