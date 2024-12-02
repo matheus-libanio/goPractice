@@ -10,10 +10,16 @@ import (
 
 func main() {
 	fmt.Println("Starting... ")
+	defer func() {
+		err := recover()
+		if err != nil {
+			fmt.Println(err)
+		}
+	}()
 
 	file, err := os.Create("newCustomers.txt")
 	if err != nil {
-		defer panic(errors.New("The indicated file could not be created"))
+		panic(errors.New("The indicated file could not be created"))
 	}
 	defer file.Close()
 
@@ -67,7 +73,7 @@ func main() {
 
 	fileReader, err := os.ReadFile("newCustomers.txt")
 	if err != nil {
-		defer panic(errors.New("The indicated file was empty"))
+		panic(errors.New("The indicated file was empty"))
 	}
 	fmt.Println("Contents of file:\n", string(fileReader))
 	fmt.Println("execução concluída")
